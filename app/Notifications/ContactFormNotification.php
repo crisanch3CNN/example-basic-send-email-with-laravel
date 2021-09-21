@@ -42,15 +42,12 @@ class ContactFormNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = QrCode::size(250)->generate($this->data['email']);
+        $url = $this->data['email'];
 
-        return (new MailMessage)
-            ->greeting('Hola esto e suna saludo!')
-            ->replyTo($this->data['email'], $this->data['name'])
-            ->line("Hola tienes un mensaje de: {$this->data['name']}")
-            ->action('Ver QR asignado', 'https://triciclos.net')
-            ->line("El mensaje es:")
-            ->line($this->data['message']);
+        return (new MailMessage)->view(
+            'email',
+            ['url' => $url]
+        );
     }
 
     /**
