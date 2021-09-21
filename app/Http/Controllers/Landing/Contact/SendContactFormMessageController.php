@@ -19,8 +19,8 @@ class SendContactFormMessageController extends Controller
             'message' => ['required', 'min:10'],
         ]);
 
-        Notification::route('mail', 'admin@mail.com')->notify(new ContactFormNotification($data));
         try {
+            Notification::route('mail', 'admin@mail.com')->notify(new ContactFormNotification($data));
         } catch (\Exception $exception) {
             Log::error($exception);
             return  \redirect()->back()->with(['error' => 'Whoops! por favor intanta mas tarde!']);
