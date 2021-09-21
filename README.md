@@ -1,3 +1,13 @@
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=587
+MAIL_USERNAME=10b8262d7c5b18
+MAIL_PASSWORD=7ce866d44f84ec
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=admin@examplebasicsendemailwithlaravel.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
